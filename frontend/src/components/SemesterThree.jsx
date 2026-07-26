@@ -89,7 +89,8 @@ const SemesterFour = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/generate", formData, {
+      // const response = await axios.post("http://localhost:5000/generate", formData, {
+      const response = await axios.post("https://question-paper-generator-wv2p.onrender.com", formData, {
         responseType: "blob",
       });
 
