@@ -1,74 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./Navbar.css";
 
 const Navbar = () => {
-  return (
-    <div className="container-fluid border-bottom bg-light wow fadeIn" data-wow-delay="0.1s">
-      <div className="container topbar bg-primary d-none d-lg-block py-2" style={{ borderRadius: "0 40px" }}>
-        <div className="d-flex justify-content-between">
-          <div className="top-info ps-2">
-            <small className="me-3">
-              <i className="fas fa-map-marker-alt me-2 text-secondary"></i>
-              <a href="#" className="text-white">Digha, Aasiyana Road, PATNA-800011, BIHAR</a>
-            </small>
-            <small className="me-3">
-              <i className="fas fa-envelope me-2 text-secondary"></i>
-              <a href="#" className="text-white">info@sxcpatna.edu.in</a>
-            </small>
-          </div>
-          <div className="top-link pe-2">
-            <a href="https://www.facebook.com/sxcmtpatna/" className="btn btn-light btn-sm-square rounded-circle">
-              <i className="fab fa-facebook-f text-secondary"></i>
-            </a>
-            <a href="https://www.youtube.com/@st.xavierscollegeofmgt.tec5556" className="btn btn-light btn-sm-square rounded-circle">
-              <i className="fab fa-youtube text-secondary"></i>
-            </a>
-            <a href="https://www.instagram.com/sxcmtpatnaofficial/" className="btn btn-light btn-sm-square rounded-circle">
-              <i className="fab fa-instagram text-secondary"></i>
-            </a>
-            <a href="https://in.linkedin.com/school/st.-xavier's-college-of-management-&-technology/" className="btn btn-light btn-sm-square rounded-circle me-0">
-              <i className="fab fa-linkedin-in text-secondary"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="container px-0 clg">
-        <nav className="navbar navbar-light navbar-expand-xl py-3">
+  const [menuOpen, setMenuOpen] = useState(false);
 
-        <div>
-        <img src="https://sxcpatna.edu.in/wp-content/uploads/2023/04/Emblem-SXCMT-2-1427x1536.png" alt="College Logo" className="clgLogo me-3 "/>
-        </div>
-          
-          <a target="_blank" href="https://sxcpatna.edu.in/" className="navbar-brand ">
-          <p className="text-primary display-8 nameHeader" style={{ letterSpacing: '1px' }}>St. Xavier’s College of Management & Technology</p>
-          <p className="naacHeader">NAAC Accredited with B++ Grade (1st Cycle) | AICTE Approved</p>
-          </a>
-          <div className="d-flex ms-auto align-items-center">
-          <img src="https://sxcpatna.edu.in/wp-content/uploads/2023/04/Finolex-Academy-of-Management-and-Technology-Ratnagiri-2-750x410-2.png" alt="CollegeLogo1" className="clgLogo1"/>
-          <img src="https://sxcpatna.edu.in/wp-content/uploads/2024/04/ISOcertified.png" alt="CollegeLogo2" className="clgLogo2"/>
-          <img src="https://sxcpatna.edu.in/wp-content/uploads/2024/05/iiclogo.png" alt="CollegeLogo3" className="clgLogo3"/>
+  return (
+    <header className="site-header">
+      {/* Top info bar — contact + socials */}
+      <div className="topbar">
+        <div className="topbar-inner">
+          <div className="top-info">
+            <a href="#" className="top-link">
+              <i className="fas fa-map-marker-alt"></i>
+              <span>Digha, Aasiyana Road, PATNA-800011, BIHAR</span>
+            </a>
+            <a href="mailto:info@sxcpatna.edu.in" className="top-link">
+              <i className="fas fa-envelope"></i>
+              <span>info@sxcpatna.edu.in</span>
+            </a>
           </div>
-          {/* <div className="d-flex ms-auto me-4">
-            <div id="phone-tada" className="d-flex align-items-center justify-content-center">
-              <a href="#" className="position-relative wow tada" data-wow-delay=".9s">
-                <i className="fa fa-phone-alt text-primary fa-2x me-4"></i>
-                <div className="position-absolute" style={{ top: "-7px", left: "20px" }}>
-                  <span>
-                    <i className="fa fa-comment-dots text-secondary"></i>
-                  </span>
-                </div>
-              </a>
-            </div>
-            <div className="d-flex flex-column pe-3 border-end border-primary">
-              <span className="text-primary">Have any questions?</span>
-              <a href="#">
-                <span className="text-secondary">Free: + 0123 456 7890</span>
-              </a>
-            </div>
-          </div> */}
-        </nav>
+
+          <div className="top-social">
+            <a href="https://www.facebook.com/sxcmtpatna/" aria-label="Facebook" className="social-btn">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.youtube.com/@st.xavierscollegeofmgt.tec5556" aria-label="YouTube" className="social-btn">
+              <i className="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/sxcmtpatnaofficial/" aria-label="Instagram" className="social-btn">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="https://in.linkedin.com/school/st.-xavier's-college-of-management-&-technology/" aria-label="LinkedIn" className="social-btn">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+
+      {/* Main brand bar */}
+      <div className="mainbar">
+        <div className="mainbar-inner">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://sxcpatna.edu.in/"
+            className="brand-block"
+          >
+            <img
+              src="https://sxcpatna.edu.in/wp-content/uploads/2023/04/Emblem-SXCMT-2-1427x1536.png"
+              alt="College Logo"
+              className="brand-logo"
+            />
+            <div className="brand-text">
+              <p className="brand-name">St. Xavier&rsquo;s College of Management &amp; Technology</p>
+              <p className="brand-tagline">NAAC Accredited with B++ Grade (1st Cycle) | AICTE Approved</p>
+            </div>
+          </a>
+
+          {/* Accreditation logos — collapse behind toggle on small screens */}
+          <button
+            className={`accred-toggle ${menuOpen ? "is-open" : ""}`}
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-expanded={menuOpen}
+            aria-label="Toggle accreditation badges"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div className={`accred-logos ${menuOpen ? "is-open" : ""}`}>
+            <img
+              src="https://sxcpatna.edu.in/wp-content/uploads/2023/04/Finolex-Academy-of-Management-and-Technology-Ratnagiri-2-750x410-2.png"
+              alt="Finolex Academy Accreditation"
+              className="accred-logo"
+            />
+            <img
+              src="https://sxcpatna.edu.in/wp-content/uploads/2024/04/ISOcertified.png"
+              alt="ISO 21001:2008 Certified"
+              className="accred-logo"
+            />
+            <img
+              src="https://sxcpatna.edu.in/wp-content/uploads/2024/05/iiclogo.png"
+              alt="Institution's Innovation Council"
+              className="accred-logo"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
   );
 };
 
