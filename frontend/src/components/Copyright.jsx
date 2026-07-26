@@ -8,7 +8,7 @@ const Copyright = () => {
           <div className="col-md-6 text-align-center text-md-end mb-3 mb-md-0">
             <span className="text-light">
               <a href="#">
-                <i className="fas fa-copyright text-light me-2"></i>QGenie
+                <i className="fas fa-copyright text-light me-2"></i>QGenie 2026
               </a>, All right reserved.
             </span>
           </div>
