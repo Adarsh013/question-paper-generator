@@ -20,7 +20,8 @@ groq_api_key = os.getenv("GROQ_API_KEY")
 llm = ChatGroq(
     temperature=0.5,
     groq_api_key=groq_api_key,
-    model_name="llama-3.1-8b-instant"
+    #model_name="llama-3.1-8b-instant"
+    model_name="openai/gpt-oss-120b"
 )
 
 def generate_vsq_questions(subject_name, syllabus, num_vsq):
